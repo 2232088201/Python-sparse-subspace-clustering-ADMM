@@ -97,24 +97,3 @@ class ssc_model(object):
                 iter1 = iter1 + 1
                 print('iter1 = %d, the error 1 is = %f and error 2 is %f' % (iter1, err1, err3))
         return C2
-
-#    def computeCmat2(self):
-#        C1 = np.zeros((self.N,self.N),dtype=np.float32)
-#        index = list(range(self.N))
-#        Io = np.eye(self.N-1,dtype=np.float32)
-#        for iter1 in range(self.N):
-#            index1 = np.asarray(list(set(index)-set([iter1])))
-#            sx = self.X[:,iter1]
-#            Dx = self.X[:,index1]
-#            part1 = np.linalg.inv(np.dot(Dx.T,Dx) + 0.0001*Io) 
-#            part2 = np.dot(Dx.T,sx)
-#            c2 = np.dot(part1,part2)
-#            C1[index1,iter1] = c2
-#        return C1
-
-#ssc = ssc_model(Xp)
-#Cmat = ssc.computeCmat()
-#imC = Cmat/np.max(Cmat.reshape(-1,1)) 
-#cv2.imshow('image_draw',imC)
-#cv2.waitKey(0)
-#cv2.destroyAllWindows()
